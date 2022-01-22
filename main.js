@@ -1,6 +1,7 @@
 // 2015 Source imports
 import y2015source1 from "./sources/2015/2015s1.js";
 import y2015source2 from "./sources/2015/2015s2.js";
+import y2015Source3 from "./sources/2015/2015s3.js";
 
 // 2021 Source imports
 import source1 from './sources/2021/source1.js';
@@ -10,6 +11,8 @@ import { sourceTables4, sourcePulledNumbers4 } from './sources/2021/sourceTables
 
 // 2015 Worker imports
 import y2015worker1 from "./workers/2015/worker1.js";
+import Y2015Worker2 from "./workers/2015/worker2.js";
+import Y2015Worker3 from "./workers/2015/worker3.js";
 
 // 2021 Worker imports
 import Worker1 from './workers/2021/worker1.js';
@@ -78,13 +81,26 @@ const y2015solutions = () => {
 
     const solution2 = () => {
         console.group('Assignment 2');
-            console.log('parsedSource2: ', parsedSource2);
+            const assignment2part1 = Y2015Worker2.job1(parsedSource2);
+            const assignment2part2 = Y2015Worker2.job2(parsedSource2);
+            console.log('assignment2part1: ', assignment2part1);
+            console.log('assignment2part2: ', assignment2part2);
+        console.groupEnd();
+        console.log('\n');
+    }
+
+    const solution3 = () => {
+        console.group('Assignment 3');
+        // const assignment3part1 = Y2015Worker3.job1(y2015Source3);
+        const assignment3part2 = Y2015Worker3.job2(y2015Source3);
+        console.log('assignment2part2: ', assignment3part2);
         console.groupEnd();
         console.log('\n');
     }
 
     // solution1();
-    solution2();
+    // solution2();
+    solution3();
 }
 
 y2015solutions();
