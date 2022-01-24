@@ -13,6 +13,7 @@ import { sourceTables4, sourcePulledNumbers4 } from './sources/2021/sourceTables
 import y2015worker1 from "./workers/2015/worker1.js";
 import Y2015Worker2 from "./workers/2015/worker2.js";
 import Y2015Worker3 from "./workers/2015/worker3.js";
+import Y2015Worker4 from "./workers/2015/worker4.js";
 
 // 2021 Worker imports
 import Worker1 from './workers/2021/worker1.js';
@@ -91,16 +92,29 @@ const y2015solutions = () => {
 
     const solution3 = () => {
         console.group('Assignment 3');
-        // const assignment3part1 = Y2015Worker3.job1(y2015Source3);
+        const assignment3part1 = Y2015Worker3.job1(y2015Source3);
         const assignment3part2 = Y2015Worker3.job2(y2015Source3);
-        console.log('assignment2part2: ', assignment3part2);
+        console.log('assignment3part1: ', assignment3part1);
+        console.log('assignment3part2: ', assignment3part2);
+        console.groupEnd();
+        console.log('\n');
+    }
+
+    const solution4 = () => {
+        console.group('Assignment 4');
+        const y2015Source4 = 'bgvyzdsv';
+        const assignment4part1 = Y2015Worker4.job1(y2015Source4);
+        const assignment4part2 = Y2015Worker4.job2(y2015Source4);
+        console.log('assignment4part1: ', assignment4part1);
+        console.log('assignment4part2: ', assignment4part2);
         console.groupEnd();
         console.log('\n');
     }
 
     // solution1();
     // solution2();
-    solution3();
+    // solution3();
+    solution4();
 }
 
 y2015solutions();
