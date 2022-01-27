@@ -3,6 +3,8 @@ import y2015source1 from "./sources/2015/2015s1.js";
 import y2015source2 from "./sources/2015/2015s2.js";
 import y2015Source3 from "./sources/2015/2015s3.js";
 import y2015Source5 from "./sources/2015/2015s5.js";
+import y2015Source6 from "./sources/2015/2015s6.js";
+import y2015Source7 from "./sources/2015/2015s7.js";
 
 // 2021 Source imports
 import source1 from './sources/2021/source1.js';
@@ -16,6 +18,8 @@ import Y2015Worker2 from "./workers/2015/worker2.js";
 import Y2015Worker3 from "./workers/2015/worker3.js";
 import Y2015Worker4 from "./workers/2015/worker4.js";
 import Y2015Worker5 from "./workers/2015/worker5.js";
+import Y2015Worker6 from "./workers/2015/worker6.js";
+import Y2015Worker7 from "./workers/2015/worker7.js";
 
 // 2021 Worker imports
 import Worker1 from './workers/2021/worker1.js';
@@ -26,6 +30,8 @@ import Worker4 from './workers/2021/worker4.js';
 // 2015 Parser imports
 import y2015SourceParser1 from "./sourceParsers/2015/2015sourceParser1.js";
 import y2015SourceParser5 from "./sourceParsers/2015/2015sourceParser5.js";
+import y2015SourceParser6 from "./sourceParsers/2015/2015sourceParser6.js";
+import y2015SourceParser7 from "./sourceParsers/2015/2015sourceParser7.js";
 
 // 2021 Parser imports
 import sourceParser1 from "./sourceParsers/2021/sourceParser1.js";
@@ -72,6 +78,8 @@ const y2021solutions = () => {
 const y2015solutions = () => {
     const parsedSource2 = y2015SourceParser1(y2015source2);
     const parsedSource5 = y2015SourceParser5(y2015Source5);
+    const parsedSource6 = y2015SourceParser6(y2015Source6);
+    const parsedSource7 = y2015SourceParser7(y2015Source7);
 
     const solution1 = () => {
         console.group('Assignment 1');
@@ -125,12 +133,34 @@ const y2015solutions = () => {
         console.log('\n');
     }
 
+    const solution6 = () => {
+        console.group('Assignment 6');
+        const assignment6part1 = Y2015Worker6.job1(parsedSource6);
+        const assignment6part2 = Y2015Worker6.job2(parsedSource6);
+        // console.log('assignment6part1: ', assignment6part1);
+        console.log('assignment6part2: ', assignment6part2);
+        console.groupEnd();
+        console.log('\n');
+    }
+
+    const solution7 = () => {
+        console.group('Assignment 7');
+        const assignment7part1 = Y2015Worker7.job1(parsedSource7);
+        // const assignment7part2 = Y2015Worker7.job2(parsedSource7);
+        console.log('assignment6part1: ', assignment7part1);
+        // console.log('assignment6part2: ', assignment7part2);
+        console.groupEnd();
+        console.log('\n');
+    }
+
 
     // solution1();
     // solution2();
     // solution3();
     // solution4();
-    solution5();
+    // solution5();
+    // solution6();
+    solution7();
 }
 
 y2015solutions();
